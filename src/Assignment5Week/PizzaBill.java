@@ -5,7 +5,7 @@ public class PizzaBill {
 	public static void main(String[] args) {
 		String pizzaSize="large";
 				
-		  boolean extChs=true;
+		  boolean extChs=false;
 		   boolean pepproniAdd=false;
 		   int bill=0;
 		  
