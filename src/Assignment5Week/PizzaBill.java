@@ -1,75 +1,71 @@
+/* Write a program to prepare the bill for a pizza shop.
+     a. Assume an order and work out the final bill.
+     b. Take the Cheese Pizza prices as: Small Pizza: $15, Medium Pizza: $20, Large Pizza: $25
+     c. For additional c: Pepperoni for Small Pizza: +$2, Pepperoni for Medium or Large Pizza: +$3
+     d. Extra cheese for any size pizza: + $1
+ . For eg: If the Pizza is medium, pepperoni with extra cheese the program should calculate the final bill as 20+3+1 = $24 and print as
+ . “Your final bill is $24”*/
+
 package Assignment5Week;
 
 public class PizzaBill {
 
 	public static void main(String[] args) {
-		String pizzaSize="large";
-				
-		  boolean extChs=false;
-		   boolean pepproniAdd=false;
-		   int bill=0;
-		  
-		  if(pizzaSize=="small")
-			  
-		  {
-			  bill=bill+15;
-		  }
-		  
-			  else if(pizzaSize=="medium")
-			  {
-				  bill=bill+20;
-			  }
-			  else if (pizzaSize=="large")
-					  {
-				  bill=bill+25;
-					  }
-			  else
-			  {
-				  System.out.println("enter correct size");
-			  }
-		  
-		  
-			   
-			   
-			 
-			    if(pepproniAdd ==true&&pizzaSize=="small") {
-		 
-			 bill=bill+2;
-		 
-			    }
-			    else
-			    {
-			    	bill=bill+0;
-			    }
-			  if (pepproniAdd==true&&(pizzaSize=="medium"||pizzaSize=="large"))
-			 { 
-				 bill=bill+3;
-			 
-			
-			 }
-			  else
-			  {
-				  bill=bill+0;
-			  }
-			  
-			  
-			  if(extChs==true)
-				 {
-					 bill=bill+1;
-					 
-				 }
-				   else
-				   
-						
-						 {
-							 bill=bill+0;
-							 
-						 }
-					   
-		 
-		 
-			System.out.println("total bill for  order is"+bill)	; 
-			 
-		 
-		 }
-		  }
+		String pizzaSize = "small";
+
+		boolean extChs = true;
+		boolean pepproniAdd = true;
+		int bill = 0;
+		{
+
+			switch (pizzaSize) {
+			case "small":
+
+				bill = bill + 15;
+
+				if (pepproniAdd == true) {
+
+					bill = bill + 2;
+				}
+				if (extChs == true) {
+					bill = bill + 1;
+				}
+				break;
+			case "large":
+
+				bill = bill + 25;
+
+				if (pepproniAdd == true) {
+
+					bill = bill + 3;
+				}
+				if (extChs == true) {
+					bill = bill + 1;
+				}
+
+				break;
+			case "medium":
+
+				bill = bill + 20;
+
+				if (pepproniAdd == true) {
+
+					bill = bill + 3;
+				}
+				if (extChs == true) {
+					bill = bill + 1;
+				}
+
+				break;
+
+			default:
+				System.out.println("enter correct size of pizza");
+
+				break;
+
+			}
+
+			System.out.println("Total bill is " + bill);
+		}
+	}
+}

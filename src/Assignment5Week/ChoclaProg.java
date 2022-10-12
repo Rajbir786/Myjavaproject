@@ -1,16 +1,26 @@
+//Write a program that will keep adding 5 chocolates to a box which already has 27 chocolates and add a mechanism that number of chocolates should never go above 63
+
 package Assignment5Week;
 
 public class ChoclaProg {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		int maximumChoclatesCanBoxHold = 63;
 
-		int chocolateCount=27;
-		int counter=0;
-		while(chocolateCount<=63)
-		{
-			System.out.println("now choclates in box"+chocolateCount);
-			chocolateCount+=5;
-			counter++;
+		for (int currentChocInBox = 27; currentChocInBox <= 100; currentChocInBox += 5) {
+			//if (currentChocInBox >= maximumChoclatesCanBoxHold) {
+				//System.out.println("maximum capacity reached stop adding chocolates");
+				//break;
+			//}
+
+			System.out.println("Number of Chocolates in Box" + currentChocInBox);
+			
+				if (currentChocInBox +5>= maximumChoclatesCanBoxHold) {
+					System.out.println("maximum capacity reached stop adding chocolates");
+					break;
+				}
+
 		}
-	}}
+	}
+
+}

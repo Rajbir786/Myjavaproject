@@ -1,8 +1,10 @@
+//Write a program to check if the number is prime or not
+
 package Assignment5Week;
 
 public class NumPrime {
 	public static void main(String args[]) {
-		int num = 17;// we take value more than 1
+		int num = 7;
 
 		int countFactors = 0;
 		for (int i = 1; i <= num; i++) {
@@ -12,10 +14,14 @@ public class NumPrime {
 
 			}
 		}
-		if (countFactors == 2) {
-			System.out.println("num is  prime");
-		} else {
-			System.out.println("num is not prime");
+		if (countFactors == 1) {
+			System.out.println("num is either 0 or 1");
+		} else if (countFactors == 2) {
+			System.out.println("num is PRIME");
+		}
+
+		else {
+			System.out.println("num is non-PRIME");
 		}
 
 	}
