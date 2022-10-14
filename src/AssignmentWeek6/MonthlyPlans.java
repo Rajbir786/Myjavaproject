@@ -21,12 +21,12 @@ public class MonthlyPlans {
 			System.out.println("Rogers has monthlyplan in" + monthlyCharges);
 			break;
 		case "Telus":
-			monthlyCharges = monthlyCharges + 70;
+			monthlyCharges = monthlyCharges + 75;
 			System.out.println("Telus has monthlyplan in" + monthlyCharges);
 			break;
 
 		case "Bell":
-			monthlyCharges = monthlyCharges + 70;
+			monthlyCharges = monthlyCharges + 80;
 			System.out.println("Bell has monthlyplan in" + monthlyCharges);
 			break;
 

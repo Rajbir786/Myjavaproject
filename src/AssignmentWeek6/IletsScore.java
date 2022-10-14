@@ -24,7 +24,8 @@ public class IletsScore {
 		} else if (listeningModuleScore == 7.5) {
 			pointsFromlisteningModuleScore = 5;
 		} else {
-			pointsFromlisteningModuleScore = 0;
+		System.out.println("Ilets score should be ");
+			System.exit(0);
 		}
 
 		return (pointsFromlisteningModuleScore);

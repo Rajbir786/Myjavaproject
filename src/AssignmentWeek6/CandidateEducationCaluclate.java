@@ -44,6 +44,7 @@ public class CandidateEducationCaluclate {
 
 		default:
 			System.out.println("invalid entry");
+			System.exit(0);
 
 		}
 		return (eduPoints);
@@ -61,6 +62,7 @@ public class CandidateEducationCaluclate {
 			exPoints = 15;
 		} else {
 			System.out.println("Minimum 4 years experience is required");
+			System.exit(0);
 		}
 
 		return (exPoints);
@@ -97,11 +99,13 @@ public class CandidateEducationCaluclate {
 			agePoints = 2;
 		} else if (ageSelected == 46) {
 			agePoints = 1;
-		} else if (ageSelected >= 47) {
+		} else if (ageSelected == 47) {
 			agePoints = 0;
 		} else {
 
 			System.out.println("Age should be in between 18-46 to get score" + agePoints);
+			System.exit(0);
+			System.out.println("try again");
 		}
 
 		return (agePoints);
