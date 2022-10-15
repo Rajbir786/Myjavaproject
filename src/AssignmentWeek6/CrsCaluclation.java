@@ -7,10 +7,7 @@ public class CrsCaluclation {
 		CandidateEducationCaluclate cEdCal = new CandidateEducationCaluclate();
 
 		int eduPoints1 = cEdCal.canEduPoint();
-
-
-		int exPoint1 = cEdCal.canExpPoints();
-		
+        int exPoint1 = cEdCal.canExpPoints();
 		int agePoints = cEdCal.canAgePoints();
 		
 

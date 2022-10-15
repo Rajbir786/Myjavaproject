@@ -13,7 +13,7 @@ public class MobileMain {
 
 		BrandSelectMobile mselB = new BrandSelectMobile();//creating instance of Class BrandSelectMobile 
 		String customerSelectedBrand = mselB.mobBrandSelected();//showing on console which brand is selected 
-		System.out.println("Customer selcected brand is" + customerSelectedBrand);//showing on console which brand is selected 
+		System.out.println("Customer selected brand is" + customerSelectedBrand);//showing on console which brand is selected 
 		String customerSelectedModel = mselB.mobModelSelect();//with object of Class  BrandSelectMobile invoked a mobModelSelect() method to get model that is selected and here
 		                                                       //invalidation also checked
 		System.out.println("Customer selected model is" + customerSelectedModel);//showing on console which model is selected 
