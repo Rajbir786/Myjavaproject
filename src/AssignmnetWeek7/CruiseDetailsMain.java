@@ -83,11 +83,22 @@ public class CruiseDetailsMain {
 		numberOfAdults = sc.nextInt();
 		System.out.println("Enter number of children");
 		int totalNumOFChildren=sc.nextInt();
+	   int	ageOfChildren[]=new int[totalNumOFChildren];
+	  if(totalNumOFChildren>0) {
+			for(int j=0;j<totalNumOFChildren;j++) {
+				System.out.println("Enter the age of child"+(j));
+				ageOfChildren[j]=	sc.nextInt();
+			}
+			for(int j=0;j<totalNumOFChildren;j++)
+			{
+		if(ageOfChildren[j]>5) {
+			numberOfChildrenMoreThanFiveYears=	numberOfChildrenMoreThanFiveYears+1;
+			
+		}
+			}
+		}
 
-		System.out.println("How many children are more than five years");
-		numberOfChildrenMoreThanFiveYears = sc.nextInt();
-
-		System.out.println(
+System.out.println(
 				"All our cruises have food service on board.Do you want to pre book for dinner buffet meals at 20.99 per day for adults and 4.99 per day for kids,please type yes or no?");
 		String customerreplyforbuffet = sc.next();
 
@@ -144,7 +155,7 @@ public class CruiseDetailsMain {
 				mystrycruise.totalPricewithbuffetprice();
 				mystrycruise.hstCalucalte();
 				mystrycruise.finalTotalBillCalucalated();
-				discvrycruise.displayFinal(numberOfAdults, numberOfChildrenMoreThanFiveYears);
+				mystrycruise.displayFinal(numberOfAdults, numberOfChildrenMoreThanFiveYears);
 
 			}
 		}
