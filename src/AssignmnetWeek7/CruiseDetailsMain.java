@@ -17,8 +17,9 @@ public class CruiseDetailsMain {
 		int numOfAttemptsforBuffetSelect = 0;
 		int numberOfAdults = 0;
 		int numberOfChildrenMoreThanFiveYears = 0;
-
+		
 		do {
+			
 
 			System.out.println("We have Four types of cruise availabale\n" + "Scenic Cruise\n" + "SunSet Cruise\n"
 					+ "Discovery Cruise\n" + "Mystery Cruise");
@@ -86,7 +87,7 @@ public class CruiseDetailsMain {
 	   int	ageOfChildren[]=new int[totalNumOFChildren];
 	  if(totalNumOFChildren>0) {
 			for(int j=0;j<totalNumOFChildren;j++) {
-				System.out.println("Enter the age of child"+(j));
+				System.out.println("Enter the age of child"+(j+1));
 				ageOfChildren[j]=	sc.nextInt();
 			}
 			for(int j=0;j<totalNumOFChildren;j++)

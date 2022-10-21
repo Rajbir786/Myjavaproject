@@ -1,16 +1,17 @@
-package AssignmnetWeek7;
+package assign7week;
+
 
 import java.util.Scanner;
 
 
 public class CruiseDetails {
-	public String cruiseName;
-	public int noOfDays;
-	public double priceForAdult;
 	
-	int numberOfTotalChildren;
-	int numberOfChildrenLessThanFiveYears;
-	 public double priceForChildrenMoreThanFiveYears;
+	 String cruiseName;
+	 int noOfDays;
+	 double priceForAdult;
+
+	
+	 double priceForChildrenMoreThanFiveYears;
 	double priceOfCruiseForAdults;
 	double totalPrice;
 	double priceOfCruiseForChildrenmoreThanFive;
@@ -21,7 +22,7 @@ public class CruiseDetails {
 
 	Scanner sc = new Scanner(System.in);
 
-	public CruiseDetails(String nameCruise, int numOfDays, double adultPrice, double childMoreThan5years) {
+	 CruiseDetails(String nameCruise, int numOfDays, double adultPrice, double childMoreThan5years) {
 		//Constructor to initialize variables
 		cruiseName = nameCruise;
 		noOfDays = numOfDays;
@@ -49,14 +50,14 @@ public class CruiseDetails {
 
 	public double buffetPricingForAdults(int numberOfAdults)//method to find price for adults if they selected buffetmeal
 	{
-		buffetPriceForAdults = (numberOfAdults * 20.99);
+		buffetPriceForAdults = (numberOfAdults * 20.99*noOfDays);
 		return buffetPriceForAdults;
 	}
 
 	public double buffetPricingForChildrenmoreThanFive(int numberOfChildrenMoreThanFiveYears) //method to find price for children above 5 if they selected buffetmeal
 	{
 
-		buffetPriceForChildrenmoreThanFive = (numberOfChildrenMoreThanFiveYears * 4.99);
+		buffetPriceForChildrenmoreThanFive = (numberOfChildrenMoreThanFiveYears * 4.99*noOfDays);
 		return buffetPriceForChildrenmoreThanFive;
 	}
 
