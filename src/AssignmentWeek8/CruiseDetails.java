@@ -1,26 +1,24 @@
-package AssignmnetWeek7;
+package AssignmentWeek8;
 
 import java.util.Scanner;
 
 public class CruiseDetails {
+
 	public String cruiseName;
 	public int noOfDays;
 	public double priceForAdult;
-
-	int numberOfTotalChildren;
-	int numberOfChildrenLessThanFiveYears;
-	public double priceForChildrenMoreThanFiveYears;
-	double priceOfCruiseForAdults;
-	double totalPrice;
-	double priceOfCruiseForChildrenmoreThanFive;
+    public  double priceForChildrenMoreThanFiveYears;
+	public double priceOfCruiseForAdults;
+	 double totalPrice;
+	 double priceOfCruiseForChildrenmoreThanFive;
 	double buffetPriceForAdults;
-	double buffetPriceForChildrenmoreThanFive;
-	double hstCalucalted;
-	double finalTotalbill;
+	 double buffetPriceForChildrenmoreThanFive;
+	 double hstCalucalted;
+	 double finalTotalbill;
 
 	Scanner sc = new Scanner(System.in);
 
-	public CruiseDetails(String nameCruise, int numOfDays, double adultPrice, double childMoreThan5years) {
+	CruiseDetails(String nameCruise, int numOfDays, double adultPrice, double childMoreThan5years) {
 		// Constructor to initialize variables
 		cruiseName = nameCruise;
 		noOfDays = numOfDays;
