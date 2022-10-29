@@ -31,7 +31,7 @@ public class CruiseDetails {
 
 	}
 
-	public double cruisePricingForAdults(int numberOfAdults) // method for caluclating price of cruise for adults
+	public double cruisePricingForAdults(int numberOfAdults) // method for calculating price of cruise for adults
 	{
 
 		priceOfCruiseForAdults = (priceForAdult * numberOfAdults * noOfDays);

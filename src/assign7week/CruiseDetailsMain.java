@@ -24,13 +24,13 @@ public class CruiseDetailsMain {
 		String enteredEmail = "";
 
 		long enteredPhonenum = 0;
-		int j;
+		int i;
 
 		Scanner sc = new Scanner(System.in);
 		SignUp sup = new SignUp();
 
 		CruiseDetails cruiseDetails[] = { scenicruise, sunstcruise, discvrycruise, mystrycruise };
-		System.out.println("	Welcome to Cruise Website. please select signup to book a cruise");
+		System.out.println("	Welcome to Cruise Website. please type signup to book a cruise");
 		String customerSelectedSignup = sc.nextLine();
 		while (!(customerSelectedSignup.equalsIgnoreCase("signup"))) {
 			System.out.println("invalid response please type signup");
@@ -46,9 +46,16 @@ public class CruiseDetailsMain {
 
 			System.out.println("Enter your name");
 			String enteredname = sc.nextLine();
+			if(enteredname.equals("")){
+				System.out.println("Name field cannot be empty");
+				System.exit(0);	
+			}
+			else {
+				
 
 			sup.setname(enteredname);
 			sup.getname();
+			}
 			System.out.println("Enter your email  ");
 			enteredEmail = sc.next();
 			sup.setuserEmail(enteredEmail);
@@ -81,32 +88,26 @@ public class CruiseDetailsMain {
 		System.out.println("We have Four types of cruise availabale\n");
 		System.out.println("Please enter the cruise that you want to select?");
 		do {
-			for (j = 0; j < cruiseDetails.length; j++) {
+			for ( i = 0; i < cruiseDetails.length; i++) {
 
-				System.out.println(cruiseDetails[j].cruiseName);
+				System.out.println(cruiseDetails[i].cruiseName);
 			}
 
-			selectedCruise = sc.nextLine();
-			while (!(selectedCruise.equals("Scenic Cruise") || selectedCruise.equals("SunSet Cruise")
-					|| selectedCruise.equals("Discovery Cruise") || selectedCruise.equals("Mystery Cruise")))// loop to
-																												// handle
-																												// invalid
-																												// entry
-																												// of
-																												// cruisename
-
-			{
+			selectedCruise = sc.next();
+			while (!selectedCruise.equals("Scenic Cruise")&&!selectedCruise.equals("SunSet Cruise")&&!selectedCruise.equals("Discovery Cruise ")&&!selectedCruise.equals("Mystery Cruise"))
+																																																			
+				{
+				System.out.println("you have entered invalid cruise name ,please select from list given above only");
+				selectedCruise = sc.nextLine();
 				numOfAttempts++;
 				if (numOfAttempts > 2) {
 					System.out.println("You have entered more than 3 times invalid cruise name");
 					System.exit(0);
 				}
-				System.out.println("you have entered invalid cruise name ,please select from list given above only");
-				selectedCruise = sc.nextLine();
-
+				
 			}
-
-			for (int i = 0; i < cruiseDetails.length; i++) {
+			selectedCruise = sc.nextLine();
+			for ( i = 0; i < cruiseDetails.length; i++) {
 
 				if (selectedCruise.equals(cruiseDetails[i].cruiseName)) {
 
@@ -140,7 +141,7 @@ public class CruiseDetailsMain {
 		int totalNumOFChildren = sc.nextInt();
 		int ageOfChildren[] = new int[totalNumOFChildren];
 		if (totalNumOFChildren > 0) {
-			for (j = 0; j < totalNumOFChildren; j++) {
+			for (int j = 0; j < totalNumOFChildren; j++) {
 				System.out.println("Enter the age of child" + (j + 1));
 				ageOfChildren[j] = sc.nextInt();
 

@@ -18,66 +18,26 @@ public class CruiseDetailsMain {
 		int numberOfChildrenMoreThanFiveYears = 0;
 		String selctedAlphabetToConfirm = "";
 		int index = 0;
-		int numOfAttemptsforSignupSelect = 0;
-		String reenteredPassword;
-		String enteredPassword = "";
-		String enteredEmail = "";
+		int inputCustomerEntered;
 
-		long enteredPhonenum = 0;
 		int j;
 
 		Scanner sc = new Scanner(System.in);
+
 		SignUp sup = new SignUp();
 
 		CruiseDetails cruiseDetails[] = { scenicruise, sunstcruise, discvrycruise, mystrycruise };
-		System.out.println("	Welcome to Cruise Website. please select signup to book a cruise");
-		String customerSelectedSignup = sc.nextLine();
-		while (!(customerSelectedSignup.equalsIgnoreCase("signup"))) {
-			System.out.println("invalid response please type signup");
-			customerSelectedSignup = sc.nextLine();
+		System.out.println("	Welcome to Cruise Website. please  signup to book a cruise");
 
-			if (numOfAttemptsforSignupSelect > 2) {
-				System.out.println("You have entered more than 3 times invalid response");
-				System.exit(0);
-			}
+		sup.setName();
 
-		}
-		if (customerSelectedSignup.equalsIgnoreCase("signup")) {
+		sup.setEmail();
 
-			System.out.println("Enter your name");
-			String enteredname = sc.nextLine();
+		sup.setPassword();
 
-			sup.setname(enteredname);
-			sup.getname();
-			System.out.println("Enter your email  ");
-			enteredEmail = sc.next();
-			sup.setuserEmail(enteredEmail);
-
-			System.out.println("Enter your PhoneNumber");
-			enteredPhonenum = sc.nextLong();
-
-			sup.setphoneNumber(enteredPhonenum);
-			do {
-				System.out.println("Enter your password");
-				enteredPassword = sc.next();
-				System.out.println("Please reenter your password");
-
-				reenteredPassword = sc.next();
-				if (enteredPassword.equals(reenteredPassword)) {
-					sup.setpassword(enteredPassword);
-				} else {
-					System.out.println("Password does not match try Again");
-				}
-			} while (!(enteredPassword.equals(reenteredPassword)));
-			System.out.println(enteredname + "has been registered,now you can sign-in to book your cruises");
-		}
-		System.out.println("Now you can  login");
-		System.out.println("Enter your  registered Email");
-		String enteredUsernameLogin = sc.next();
-		System.out.println("Enter your password");
-		String enteredPasswordForLogin = sc.next();
-
-		sup.loginFunc(enteredUsernameLogin, enteredPasswordForLogin);
+		sup.setPhoneNum();
+		System.out.println("Now you have been registered,now you can sign-in to book your cruises");
+		sup.loginFunc();
 		System.out.println("We have Four types of cruise availabale\n");
 		System.out.println("Please enter the cruise that you want to select?");
 		do {
@@ -92,7 +52,7 @@ public class CruiseDetailsMain {
 																												// handle
 																												// invalid
 																												// entry
-																												// of
+																												// o //
 																												// cruisename
 
 			{
@@ -191,28 +151,47 @@ public class CruiseDetailsMain {
 			}
 
 		}
+
 		System.out.println(
 				"Do you want to change your personal information.Press Y to change.Press any other alphabet to exit");
 		String entryToChangeInfo = sc.next();
 		if (entryToChangeInfo.equalsIgnoreCase("Y")) {
-			System.out.println("Please enter the  number,that information you want to change.\n" + "1.password \n"
+			System.out.println("Please enter that information you want to change.\n" + "1.password \n"
 					+ "2.phonenumber \n" + "3.Email \n");
-			int inputCustomerEntered = sc.nextInt();
 
-			if (inputCustomerEntered == 1) {
-				sup.setupdatePassword(enteredPassword);
-			}
-			if (inputCustomerEntered == 2)
+			inputCustomerEntered = sc.nextInt();
+			boolean passwordMatch = sup.passwordMatch();
+			switch (inputCustomerEntered) {
+			case (1):
+				if (passwordMatch) {
 
-			{
-				sup.setUpdatePhonenum(enteredPhonenum);
-			}
-			if (inputCustomerEntered == 3) {
-				sup.UpdateEmail(enteredEmail);
-			}
-		}
+					sup.setPassword();
+					System.out.println("Your password has been changed");
+					break;
+				}
+			case (2):
+				if (passwordMatch) {
+					sup.setPhoneNum();
+					System.out.println("Your Phonenumber has been changed");
+					break;
+				}
+			case (3):
+				if (passwordMatch) {
 
-		else {
+					sup.setEmail();
+					System.out.println("Your Email has been changed");
+					break;
+				}
+			default:
+				System.out.println("Thank you for using the service");
+				System.exit(0);
+				
+		
+
+			}
+
+		} else {
+
 			System.out.println("Thank you for using the service");
 			System.exit(0);
 

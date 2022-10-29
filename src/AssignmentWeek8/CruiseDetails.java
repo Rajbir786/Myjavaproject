@@ -7,14 +7,14 @@ public class CruiseDetails {
 	public String cruiseName;
 	public int noOfDays;
 	public double priceForAdult;
-    public  double priceForChildrenMoreThanFiveYears;
+	public double priceForChildrenMoreThanFiveYears;
 	public double priceOfCruiseForAdults;
-	 double totalPrice;
-	 double priceOfCruiseForChildrenmoreThanFive;
+	double totalPrice;
+	double priceOfCruiseForChildrenmoreThanFive;
 	double buffetPriceForAdults;
-	 double buffetPriceForChildrenmoreThanFive;
-	 double hstCalucalted;
-	 double finalTotalbill;
+	double buffetPriceForChildrenmoreThanFive;
+	double hstCalucalted;
+	double finalTotalbill;
 
 	Scanner sc = new Scanner(System.in);
 
