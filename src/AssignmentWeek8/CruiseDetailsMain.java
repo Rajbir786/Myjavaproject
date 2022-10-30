@@ -185,8 +185,6 @@ public class CruiseDetailsMain {
 			default:
 				System.out.println("Thank you for using the service");
 				System.exit(0);
-				
-		
 
 			}
 
