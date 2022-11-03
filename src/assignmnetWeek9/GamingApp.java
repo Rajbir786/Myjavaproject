@@ -15,8 +15,11 @@ public class GamingApp {
 		Set<String> prevGuesses = new HashSet<>();
 
 		System.out.println("Welcome to StudentName guessing game");
-		int index = 0;
+		
 		int wrongAttempts = 0;
+		int index=0;
+		int count=0;
+		
 
 		Scanner sc = new Scanner(System.in);
 		String fileName = ("C:\\Users\\Rajbir\\Downloads\\NameList.txt");
@@ -31,27 +34,29 @@ public class GamingApp {
 		in.close();
 
 		String randomName = allNames.get(r.nextInt(allNames.size()));
+		
 
-		System.out.println("Randamoly picked name is  \n " + randomName.replaceAll("\\w", "*")
+		System.out.println("Randamoly picked name is  \n " + randomName.replaceAll("\\w", "_")
 				+ " \nNow you have to guess which name is this");
 		System.out.println(
-				"This Studentname has " + randomName.length() + " letters " + "  first letter is always capital");
+				"This Studentname has " + randomName.length() + " letters " );
 
 		int length = randomName.length();
+		
 
-		char[] wordToGuessChars = randomName.toCharArray(); // creates character array of strings
-		char[] censor = randomName.toCharArray();
+		char[] wordToGuessChars = randomName.toLowerCase().toCharArray(); // creates character array of strings
+		char[] randamNameCharArray = randomName.toLowerCase().toCharArray();
 		System.out.println("You are guessing: "); // prints an array of chars with the same length as string
 		for (int i = 0; i < length; i++) {
-			censor[i] = '_';
+			randamNameCharArray[i] = '_';
 		}
 
-		while (!String.valueOf(censor).equals(randomName)) {
+		while (!String.valueOf(randamNameCharArray).equalsIgnoreCase(randomName)) {
 			// Initialize all variables in loop
 			boolean correct = false; // lets the user know if the letter is in the word or not
 			boolean repeated = false;// check if user guessed the same letter twice
 			for (int i = 0; i < length; i++) {
-				System.out.print(censor[i]);// prints the censored secret Name
+				System.out.print(randamNameCharArray[i]);// prints the hidden Randomly picked Name
 			}
 			System.out.print("  Guess a letter:   ");
 			String currentGuess = sc.next().substring(0, 1);
@@ -70,7 +75,7 @@ public class GamingApp {
 				int times = 0; // number of times a letter is in the word
 				for (int i = 0; i < length; i++) {
 					if (wordToGuessChars[i] == currentGuessChar) {
-						censor[i] = currentGuessChar; // replaces _ with guessed letter in caps
+						randamNameCharArray[i] = currentGuessChar; // replaces _ with guessed letter in caps
 						correct = true;
 						times++;
 					}
@@ -86,11 +91,18 @@ public class GamingApp {
 				} else {
 					System.out.println("Sorry, the letter  " + currentGuessChar + "  is not in the StudentName.  ");
 					wrongAttempts++;
-					char wrongChar = currentGuessChar;
+					String  wrongChar = String.valueOf(currentGuessChar);
+					String wrongChar1[]=new String[5];
+					for(int i=0;i<5;i++) {
+						wrongChar1[i]=wrongChar;
+						
+						
+						
+					}
+					
+					System.out.println("You have guessed  " + (wrongAttempts) + "  wrong letters   "+ wrongChar1[index] );
 
-					System.out.println("You have guessed  " + (wrongAttempts) + "  wrong letters   " + wrongChar);
-
-				}
+				
 
 				if (wrongAttempts == 5) {
 					System.out.println(
@@ -99,11 +111,10 @@ public class GamingApp {
 					System.exit(0);
 				}
 
-			}
+			}}}
 
-		}
+		
 
 		System.out.println(
 				"You guessed the Full StudentName **********" + randomName + " ***********correctly!" + "You win\n");
-	}
-}
+	}}
