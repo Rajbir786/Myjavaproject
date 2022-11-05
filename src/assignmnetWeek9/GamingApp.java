@@ -15,12 +15,11 @@ public class GamingApp {
 		Set<String> prevGuesses = new HashSet<>();
 
 		System.out.println("Welcome to StudentName guessing game");
-		
-		int wrongAttempts = 0;
-		int index=0;
-		int count=0;
-		
 
+		int wrongAttempts = 0;
+		int index = 0;
+	
+		
 		Scanner sc = new Scanner(System.in);
 		String fileName = ("C:\\Users\\Rajbir\\Downloads\\NameList.txt");
 
@@ -34,15 +33,12 @@ public class GamingApp {
 		in.close();
 
 		String randomName = allNames.get(r.nextInt(allNames.size()));
-		
 
 		System.out.println("Randamoly picked name is  \n " + randomName.replaceAll("\\w", "_")
 				+ " \nNow you have to guess which name is this");
-		System.out.println(
-				"This Studentname has " + randomName.length() + " letters " );
+		System.out.println("This Studentname has " + randomName.length() + " letters ");
 
 		int length = randomName.length();
-		
 
 		char[] wordToGuessChars = randomName.toLowerCase().toCharArray(); // creates character array of strings
 		char[] randamNameCharArray = randomName.toLowerCase().toCharArray();
@@ -59,6 +55,7 @@ public class GamingApp {
 				System.out.print(randamNameCharArray[i]);// prints the hidden Randomly picked Name
 			}
 			System.out.print("  Guess a letter:   ");
+			
 			String currentGuess = sc.next().substring(0, 1);
 
 			char currentGuessChar = currentGuess.charAt(0); // gets char data from scanner
@@ -77,6 +74,7 @@ public class GamingApp {
 					if (wordToGuessChars[i] == currentGuessChar) {
 						randamNameCharArray[i] = currentGuessChar; // replaces _ with guessed letter in caps
 						correct = true;
+						
 						times++;
 					}
 
@@ -91,30 +89,28 @@ public class GamingApp {
 				} else {
 					System.out.println("Sorry, the letter  " + currentGuessChar + "  is not in the StudentName.  ");
 					wrongAttempts++;
-					String  wrongChar = String.valueOf(currentGuessChar);
-					String wrongChar1[]=new String[5];
-					for(int i=0;i<5;i++) {
-						wrongChar1[i]=wrongChar;
-						
-						
-						
+					String wrongChar = String.valueOf(currentGuessChar);
+					String wrongChar1[] = new String[5];
+					for (int i = 0; i < 5; i++) {
+						wrongChar1[i] = wrongChar;
+
 					}
-					
-					System.out.println("You have guessed  " + (wrongAttempts) + "  wrong letters   "+ wrongChar1[index] );
 
-				
+					System.out
+							.println("You have guessed  " + (wrongAttempts) + "  wrong letters   " + wrongChar1[index]);
 
-				if (wrongAttempts == 5) {
-					System.out.println(
-							"you have already guessed five wrong letters and you lose the game,best of luck for next time");
+					if (wrongAttempts == 5) {
+						System.out.println(
+								"you have already guessed five wrong letters and you lose the game,best of luck for next time");
 
-					System.exit(0);
+						System.exit(0);
+					}
+
 				}
-
-			}}}
-
-		
+			}
+		}
 
 		System.out.println(
 				"You guessed the Full StudentName **********" + randomName + " ***********correctly!" + "You win\n");
-	}}
+	}
+}
