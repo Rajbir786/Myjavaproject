@@ -53,6 +53,7 @@ public class GamingMain {
 
 		while (!String.valueOf(maskedNameCharArray).equalsIgnoreCase(randomName)) {
 			boolean letterMatch = false;
+			boolean repeated=false;
 
 			for (int i = 0; i < randomName.length(); i++) {
 				System.out.print(maskedNameCharArray[i]);
@@ -61,8 +62,13 @@ public class GamingMain {
 
 			System.out.println("Enter  your guess ");
 			String guessedLetterString = sc.next();
-
 			guessedLetter = guessedLetterString.charAt(0);
+			
+			
+		
+
+			
+			
 
 			int chances = 0;
 			for (int i = 0; i < randomName.length(); i++) {
@@ -71,7 +77,7 @@ public class GamingMain {
 					maskedNameCharArray[i] = guessedLetter;
 					chances++;
 					letterMatch = true;
-
+				
 				}
 
 			}
