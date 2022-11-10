@@ -1,4 +1,4 @@
-package assignweek10;
+package assignmnetweek10;
 
 import java.util.Scanner;
 
@@ -17,11 +17,11 @@ public class CruiseDetails extends UserDetails {
 	double finalTotalbill;
 	String customerreplyforbuffet = "";
 	int numOfAttemptsforBuffetSelect = 0;
-	String selectedCruise="";
+	String selectedCruise="" ;
+	
 	int numOfAttempts=0;
-
 	Scanner sc = new Scanner(System.in);
-public String cruiseSelction() {
+	public String cruiseSelction() {
 		
 		System.out.println("We have Four types of cruise availabale");
 		System.out.println("Please enter the cruise that you want to select?\n" + "Scenic Cruise\n"
@@ -43,7 +43,6 @@ public String cruiseSelction() {
 	}
 		return selectedCruise;
 	}
-
 
 	public void selectedCruiseDisplayInfo() {
 
@@ -120,7 +119,7 @@ public String cruiseSelction() {
 		hstCalucalted = totalPrice * 0.15;
 
 	}
-
-	 
+	
+	
 	
 }

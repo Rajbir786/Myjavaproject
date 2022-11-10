@@ -1,4 +1,4 @@
-package assignweek10;
+package assignmnetweek10;
 
 import java.util.Scanner;
 
@@ -12,10 +12,10 @@ public class ServiceMain1 {
 		CruiseDetails cruiseDetails[] = { scenic, sunst, dscvry, mystry };
 		DeluxeSuite dlxsuit = new DeluxeSuite();
 		FamilySuite fmlysuit = new FamilySuite();
-	
+		HotelBooking htlbook[]= {dlxsuit,fmlysuit};
 		CruiseDetails  crsdtl=new CruiseDetails();
 
-		int numOfAttempt = 0;
+		int numOfAttempts = 0;
 		Scanner sc = new Scanner(System.in);
 		String selectedCruise = "";
 		String selctedAlphabetToConfirm = "";
@@ -41,8 +41,8 @@ public class ServiceMain1 {
 																											// entry
 			{
 
-				numOfAttempt++;
-				if (numOfAttempt > 2) {
+				numOfAttempts++;
+				if (numOfAttempts > 2) {
 					System.out.println("You have entered more than 3 times invalid entry");
 
 					System.exit(0);
