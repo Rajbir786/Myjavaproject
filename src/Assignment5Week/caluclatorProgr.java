@@ -42,3 +42,15 @@ public class caluclatorProgr {
 
 }
 
+
+//scenic.scenicselectedDisplayInfo();
+} else if ((selectedCruise.equalsIgnoreCase("Sunset Cruise"))) {
+sunst.sunsetselectedDisplayInfo();
+
+} else if ((selectedCruise.equalsIgnoreCase("Discovery Cruise"))) {
+dscvry.discoveryselectedDisplayInfo();
+
+} else if ((selectedCruise.equalsIgnoreCase("Mystery Cruise"))) {
+mystry.mysteryselectedDisplayInfo();
+
+}

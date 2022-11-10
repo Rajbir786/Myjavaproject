@@ -14,39 +14,16 @@ public class ScenicClass extends CruiseDetails {
 	String customereply = "";
 	double totalAdditionalservicecharges = 0;
 
-	public void scenicselectedDisplayInfo() {
+	
 
-		System.out.println(
-				"The cruise that you have selected is " + cruiseName + "which is a         " + noOfDays + "day cruise");
-		System.out.println("The cruise that you have selected is " + cruiseName
-				+ " price for Adults(greater than 12)       " + priceForAdult + "per day");
-		System.out.println("The cruise that you have selected is " + cruiseName + " price for children(above 5)     "
-				+ priceForChildrenMoreThanFiveYears + "per day");
 
-	}
-
-	public void cruisePricingForAdults() // method for caluclating price of cruise for adults
-	{
-
-		priceOfCruiseForAdults = (priceForAdult * numberOfAdults * noOfDays);
-
-	}
-
-	public void cruisePricingForChildren()// method for caluclating price of
-											// cruise for children above 5
-	{
-
-		priceOfCruiseForChildrenmoreThanFive = (numberOfChildrenMoreThanFiveYears * noOfDays
-				* priceForChildrenMoreThanFiveYears);
-
-	}
 
 	public void scenicselectedAdditionalService() {
 		System.out.println(
 				"scenic cruise has additional service of spa (only for adults)would you like to book it? yes or no,it will be charged $50 per person.");
 		customereply = sc.nextLine();
 		if (customereply.equals("yes")) {
-			totalAdditionalservicecharges = (50 * numberOfAdults);
+			totalAdditionalservicecharges = (50*numberOfAdults);
 
 		} else {
 			totalAdditionalservicecharges = 0;
@@ -78,5 +55,7 @@ public class ScenicClass extends CruiseDetails {
 		finalTotalbill = totalPrice + hstCalucalted;
 
 	}
+
+	
 
 }

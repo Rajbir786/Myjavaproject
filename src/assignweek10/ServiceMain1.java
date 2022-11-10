@@ -9,6 +9,7 @@ public class ServiceMain1 {
 		SunsetClass sunst = new SunsetClass("SunSet Cruise", 1, 52.99, 15.99);
 		DiscoveryClass dscvry = new DiscoveryClass("Discovery Cruise", 4, 39.99, 9.99);
 		MysteryClass mystry = new MysteryClass("Mystery Cruise", 2, 45.99, 12.99);
+		CruiseDetails cruiseDetails[] = { scenic, sunst, dscvry, mystry };
 
 		int numOfAttempts = 0;
 		Scanner sc = new Scanner(System.in);
@@ -27,7 +28,7 @@ public class ServiceMain1 {
 
 		do {
 
-			System.out.println("Please enter the service you want to book  Cruise/Hotel Stay");
+			System.out.println("Please enter the service you want to book  Hotel Stay/Cruise");
 			String serviceSelc = sc.nextLine();
 			while (!(serviceSelc.equalsIgnoreCase("Hotel Stay") || serviceSelc.equalsIgnoreCase("Cruise")))// invalidation
 																											// handling
@@ -53,8 +54,8 @@ public class ServiceMain1 {
 					System.out.println("Please enter the cruise that you want to select?\n" + "Scenic Cruise\n"
 							+ "SunSet Cruise\n" + "Discovery Cruise\n" + "Mystery Cruise");
 					selectedCruise = sc.nextLine();
-					while (!(selectedCruise.equals("Scenic Cruise") || selectedCruise.equals("SunSet Cruise")
-							|| selectedCruise.equals("Discovery Cruise") || selectedCruise.equals("Mystery Cruise")))
+					while (!(selectedCruise.equalsIgnoreCase("Scenic Cruise") || selectedCruise.equalsIgnoreCase("SunSet Cruise")
+							|| selectedCruise.equalsIgnoreCase("Discovery Cruise") || selectedCruise.equalsIgnoreCase("Mystery Cruise")))
 
 					{
 						numOfAttempts++;
@@ -67,82 +68,63 @@ public class ServiceMain1 {
 						selectedCruise = sc.nextLine();
 
 					}
+					for (int i = 0; i < cruiseDetails.length; i++) {
 
-					if (selectedCruise.equalsIgnoreCase("Scenic Cruise")) {
-						scenic.scenicselectedDisplayInfo();
-					} else if ((selectedCruise.equalsIgnoreCase("Sunset Cruise"))) {
-						sunst.sunsetselectedDisplayInfo();
+						if (selectedCruise.equals(cruiseDetails[i].cruiseName)) {
 
-					} else if ((selectedCruise.equalsIgnoreCase("Discovery Cruise"))) {
-						dscvry.discoveryselectedDisplayInfo();
+							cruiseDetails[i].selectedCruiseDisplayInfo();
 
-					} else if ((selectedCruise.equalsIgnoreCase("Mystery Cruise"))) {
-						mystry.mysteryselectedDisplayInfo();
-
+						}
 					}
 
 					System.out.println(
-							"Please press y if you want to continue with the selction or press any other alaphabet to select another");
+							"Please press Y if you want to continue with the selction or press any other alaphabet to select another");
 
-					selctedAlphabetToConfirm = sc.next();// confirmation of cruise by entering y
+					selctedAlphabetToConfirm = sc.nextLine();// confirmation of cruise by entering y
 
 				}
 
-				while (!(selctedAlphabetToConfirm.equalsIgnoreCase("y")));
-//calling of methods based on types of cruise selection by particular cruise's object
-				switch (selectedCruise) {
+				while (!(selctedAlphabetToConfirm.equalsIgnoreCase("Y")));
 
-				case "Scenic Cruise":
+				if (selectedCruise.equals("Scenic Cruise")) {
 
 					scenic.totalNoOfUser();
 					scenic.scenicselectedAdditionalService();
 					scenic.cruisePricingForAdults();
 					scenic.cruisePricingForChildren();
 					scenic.buffetSelectionCruise();
-
 					scenic.buffetPricingForAdults();
 					scenic.buffetPricingForChildrenmoreThanFive();
-
 					scenic.totalPricewithbuffetprice();
 					scenic.hstCalucalte();
 					scenic.finalTotalBillCalucalated();
 					scenic.displayFinal();
-					break;
 
-				case "Sunset Cruise":
-
+				} else if ((selectedCruise.equals("Sunset Cruise"))) {
 					sunst.totalNoOfUser();
 					sunst.sunsetselectedAdditionalService();
 					sunst.cruisePricingForAdults();
 					sunst.cruisePricingForChildren();
 					sunst.buffetSelectionCruise();
-
 					sunst.buffetPricingForAdults();
 					sunst.buffetPricingForChildrenmoreThanFive();
-
 					sunst.totalPricewithbuffetprice();
 					sunst.hstCalucalte();
 					sunst.finalTotalBillCalucalated();
 					sunst.displayFinal();
-					break;
-				case "Discovery Cruise":
-
+				} else if (selectedCruise.equals("Discovery Cruise")) {
 					dscvry.totalNoOfUser();
 					dscvry.discoveryselectedAdditionalService();
 					dscvry.cruisePricingForAdults();
 					dscvry.cruisePricingForChildren();
 					dscvry.buffetSelectionCruise();
-
 					dscvry.buffetPricingForAdults();
 					dscvry.buffetPricingForChildrenmoreThanFive();
-
 					dscvry.totalPricewithbuffetprice();
 					dscvry.hstCalucalte();
 					dscvry.finalTotalBillCalucalated();
 					dscvry.displayFinal();
-					break;
-				case "Mystery Cruise":
-
+				} else if (selectedCruise.equals("Discovery Cruise")) {
 					mystry.totalNoOfUser();
 					mystry.mysteryselectedAdditionalService();
 					mystry.cruisePricingForAdults();
@@ -150,15 +132,10 @@ public class ServiceMain1 {
 					mystry.buffetSelectionCruise();
 					mystry.buffetPricingForAdults();
 					mystry.buffetPricingForChildrenmoreThanFive();
-
 					mystry.totalPricewithbuffetprice();
 					mystry.hstCalucalte();
 					mystry.finalTotalBillCalucalated();
 					mystry.displayFinal();
-					break;
-				default:
-					System.out.println(
-							"\"you have entered invalid cruise name ,please select from list given above only");
 				}
 			}
 
@@ -173,7 +150,7 @@ public class ServiceMain1 {
 
 					dlxsuit.totalNoOfUser1();
 
-					while ((dlxsuit.numberOfAdults > 2) || (dlxsuit.totalNumOFChildren > 2))// check selcted room can
+					while ((dlxsuit.numberOfAdults > 2)|| (dlxsuit.totalNumOFChildren > 2))// check selcted room can
 																							// accomodate total number
 																							// of guests or not
 					{
@@ -223,8 +200,7 @@ public class ServiceMain1 {
 
 			System.out.println("Please enter y if you want to continue");
 
-			customerreplyforanotherbooking = sc.nextLine();
-			// System.out.println("You can enjoy more services");
+			System.out.println("You can enjoy more services");
 			customerreplyforanotherbooking = sc.nextLine();
 		} while (customerreplyforanotherbooking.equalsIgnoreCase("y"));
 

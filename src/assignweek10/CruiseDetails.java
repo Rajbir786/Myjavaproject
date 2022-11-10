@@ -20,7 +20,35 @@ public class CruiseDetails extends UserDetails {
 
 	Scanner sc = new Scanner(System.in);
 
-	void buffetSelectionCruise()
+	public void selectedCruiseDisplayInfo() {
+
+		System.out.println(
+				"The cruise that you have selected is " + cruiseName + "which is a         " + noOfDays + "day cruise");
+		System.out.println("The cruise that you have selected is " + cruiseName
+				+ " price for Adults(greater than 12)       " + priceForAdult + "per day");
+		System.out.println("The cruise that you have selected is " + cruiseName + " price for children(above 5)     "
+				+ priceForChildrenMoreThanFiveYears + "per day");
+
+	}
+	public void cruisePricingForAdults() // method for caluclating price of cruise for adults
+	{
+
+		priceOfCruiseForAdults = (priceForAdult * numberOfAdults * noOfDays);
+
+	}
+
+	public void cruisePricingForChildren()// method for caluclating price of
+									// cruise for children above 5
+	{
+
+		priceOfCruiseForChildrenmoreThanFive = (numberOfChildrenMoreThanFiveYears * noOfDays
+				* priceForChildrenMoreThanFiveYears);
+
+	}
+
+
+
+	public void buffetSelectionCruise()
 
 	{
 		System.out.println(
@@ -41,7 +69,7 @@ public class CruiseDetails extends UserDetails {
 
 	}
 
-	void buffetPricingForAdults() {
+	public void buffetPricingForAdults() {
 		if (customerreplyforbuffet.equalsIgnoreCase("yes")) {
 
 			buffetPriceForAdults = (numberOfAdults * 20.99 * noOfDays);
@@ -52,7 +80,7 @@ public class CruiseDetails extends UserDetails {
 
 	}
 
-	void buffetPricingForChildrenmoreThanFive() {
+	 public void buffetPricingForChildrenmoreThanFive() {
 		if (customerreplyforbuffet.equalsIgnoreCase("yes")) {
 
 			buffetPriceForChildrenmoreThanFive = (numberOfChildrenMoreThanFiveYears * 4.99 * noOfDays);
@@ -63,14 +91,11 @@ public class CruiseDetails extends UserDetails {
 
 	}
 
-	void hstCalucalte() {
+	public void hstCalucalte() {
 		hstCalucalted = totalPrice * 0.15;
 
 	}
 
-	void finalTotalBillCalucalated() {
-		finalTotalbill = totalPrice + hstCalucalted;
-
-	}
-
+	 
+	
 }

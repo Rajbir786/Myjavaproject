@@ -13,34 +13,9 @@ public class SunsetClass extends CruiseDetails {
 
 	}
 
-	void cruisePricingForAdults() // method for caluclating price of cruise for adults
-	{
-
-		priceOfCruiseForAdults = (priceForAdult * numberOfAdults * noOfDays);
-
-	}
-
-	void cruisePricingForChildren()// method for caluclating price of
-									// cruise for children above 5
-	{
-
-		priceOfCruiseForChildrenmoreThanFive = (numberOfChildrenMoreThanFiveYears * noOfDays
-				* priceForChildrenMoreThanFiveYears);
-
-	}
-
-	void sunsetselectedDisplayInfo() {
-
-		System.out.println(
-				"The cruise that you have selected is " + cruiseName + "which is a         " + noOfDays + "day cruise");
-		System.out.println("The cruise that you have selected is " + cruiseName
-				+ " price for Adults(greater than 12)       " + priceForAdult + "per day");
-		System.out.println("The cruise that you have selected is " + cruiseName + " price for children(above 5)     "
-				+ priceForChildrenMoreThanFiveYears + "per day");
-
-	}
-
-	void sunsetselectedAdditionalService() {
+	
+	
+	public void sunsetselectedAdditionalService() {
 
 		System.out.println(
 				"scenic cruise has additional service of candle light dinner would you like to book it? yes or no,it will be charged $45 per person.");
@@ -54,7 +29,7 @@ public class SunsetClass extends CruiseDetails {
 
 	}
 
-	void displayFinal() {
+	public void displayFinal() {
 		System.out.println(cruiseName + "Adults            @   " + numberOfAdults + "   $" + priceOfCruiseForAdults);
 		System.out.println(cruiseName + "Children abovefiveyears@   " + numberOfChildrenMoreThanFiveYears + "   $"
 				+ priceOfCruiseForChildrenmoreThanFive);
@@ -69,13 +44,13 @@ public class SunsetClass extends CruiseDetails {
 		System.out.println("Final Price:                 $" + finalTotalbill);
 	}
 
-	void totalPricewithbuffetprice() {
+	public void totalPricewithbuffetprice() {
 		totalPrice = priceOfCruiseForAdults + priceOfCruiseForChildrenmoreThanFive + buffetPriceForAdults
 				+ buffetPriceForChildrenmoreThanFive + totalAdditionalservicecharges;
 
 	}
 
-	void finalTotalBillCalucalated() {
+	public void finalTotalBillCalucalated() {
 		finalTotalbill = totalPrice + hstCalucalted;
 
 	}

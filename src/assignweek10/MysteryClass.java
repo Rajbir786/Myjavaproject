@@ -13,7 +13,7 @@ public class MysteryClass extends CruiseDetails {
 
 	}
 
-	void mysteryselectedDisplayInfo() {
+	public void mysteryselectedDisplayInfo() {
 
 		System.out.println(
 				"The cruise that you have selected is " + cruiseName + "which is a         " + noOfDays + "day cruise");
@@ -24,23 +24,9 @@ public class MysteryClass extends CruiseDetails {
 
 	}
 
-	void cruisePricingForAdults() // method for caluclating price of cruise for adults
-	{
+	
 
-		priceOfCruiseForAdults = (priceForAdult * numberOfAdults * noOfDays);
-
-	}
-
-	void cruisePricingForChildren()// method for caluclating price of
-									// cruise for children above 5
-	{
-
-		priceOfCruiseForChildrenmoreThanFive = (numberOfChildrenMoreThanFiveYears * noOfDays
-				* priceForChildrenMoreThanFiveYears);
-
-	}
-
-	void mysteryselectedAdditionalService() {
+	public void mysteryselectedAdditionalService() {
 
 		System.out.println(
 				"Mystery cruise has additional service of casino(only for adults) would you like to book it? yes or no,it will be charged $20per person.");
@@ -53,7 +39,7 @@ public class MysteryClass extends CruiseDetails {
 		}
 	}
 
-	void displayFinal() {
+	public void displayFinal() {
 		System.out.println(cruiseName + "Adults            @   " + numberOfAdults + "   $" + priceOfCruiseForAdults);
 		System.out.println(cruiseName + "Children abovefiveyears@   " + numberOfChildrenMoreThanFiveYears + "   $"
 				+ priceOfCruiseForChildrenmoreThanFive);
@@ -68,13 +54,13 @@ public class MysteryClass extends CruiseDetails {
 		System.out.println("Final Price:                 $" + finalTotalbill);
 	}
 
-	void totalPricewithbuffetprice() {
+	public void totalPricewithbuffetprice() {
 		totalPrice = priceOfCruiseForAdults + priceOfCruiseForChildrenmoreThanFive + buffetPriceForAdults
 				+ buffetPriceForChildrenmoreThanFive + totalAdditionalservicecharges;
 
 	}
 
-	void finalTotalBillCalucalated() {
+	public void finalTotalBillCalucalated() {
 		finalTotalbill = totalPrice + hstCalucalted;
 
 	}
