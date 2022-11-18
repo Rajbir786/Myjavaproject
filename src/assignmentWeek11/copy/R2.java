@@ -1,4 +1,4 @@
-package assignmentWeek11;
+package assignmentWeek11.copy;
 
 public class R2 extends Rocket {
 	public R2() {

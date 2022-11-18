@@ -1,4 +1,4 @@
-package assignmentWeek11;
+package assignmentWeek11.copy;
 
 public class Rocket implements SpaceShip {
 
@@ -28,7 +28,7 @@ public class Rocket implements SpaceShip {
 
 	}
 
-
+	@Override
 	public int carry(Item item) {
 		this.currentweight = this.currentweight + item.weight;
 		// TODO Auto-generated method stub
