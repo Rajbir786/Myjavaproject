@@ -17,18 +17,24 @@ public class CruiseDetails extends UserDetails {
 	double finalTotalbill;
 	String customerreplyforbuffet = "";
 	int numOfAttemptsforBuffetSelect = 0;
-	String selectedCruise="";
-	int numOfAttempts=0;
+	String selectedCruise = "";
+	int numOfAttempts = 0;
+
+	String customereply = "";
+	double totalAdditionalservicecharges = 0;
+
 
 	Scanner sc = new Scanner(System.in);
-public String cruiseSelction() {
-		
+
+	public String cruiseSelction() {
+
 		System.out.println("We have Four types of cruise availabale");
-		System.out.println("Please enter the cruise that you want to select?\n" + "Scenic Cruise\n"
-				+ "SunSet Cruise\n" + "Discovery Cruise\n" + "Mystery Cruise");
+		System.out.println("Please enter the cruise that you want to select?\n" + "Scenic Cruise\n" + "SunSet Cruise\n"
+				+ "Discovery Cruise\n" + "Mystery Cruise");
 		selectedCruise = sc.nextLine();
 		while (!(selectedCruise.equalsIgnoreCase("Scenic Cruise") || selectedCruise.equalsIgnoreCase("SunSet Cruise")
-				|| selectedCruise.equalsIgnoreCase("Discovery Cruise") || selectedCruise.equalsIgnoreCase("Mystery Cruise")))
+				|| selectedCruise.equalsIgnoreCase("Discovery Cruise")
+				|| selectedCruise.equalsIgnoreCase("Mystery Cruise")))
 
 		{
 			numOfAttempts++;
@@ -36,14 +42,12 @@ public String cruiseSelction() {
 				System.out.println("You have entered more than 3 times invalid cruise name");
 				System.exit(0);
 			}
-			System.out.println(
-					"you have entered invalid cruise name ,please select from list given above only");
+			System.out.println("you have entered invalid cruise name ,please select from list given above only");
 			selectedCruise = sc.nextLine();
-		
-	}
+
+		}
 		return selectedCruise;
 	}
-
 
 	public void selectedCruiseDisplayInfo() {
 
@@ -55,6 +59,7 @@ public String cruiseSelction() {
 				+ priceForChildrenMoreThanFiveYears + "per day");
 
 	}
+
 	public void cruisePricingForAdults() // method for caluclating price of cruise for adults
 	{
 
@@ -62,16 +67,12 @@ public String cruiseSelction() {
 
 	}
 
-	public void cruisePricingForChildren()// method for caluclating price of
-									// cruise for children above 5
-	{
+	public void cruisePricingForChildren() {
 
 		priceOfCruiseForChildrenmoreThanFive = (numberOfChildrenMoreThanFiveYears * noOfDays
 				* priceForChildrenMoreThanFiveYears);
 
 	}
-
-
 
 	public void buffetSelectionCruise()
 
@@ -93,7 +94,41 @@ public String cruiseSelction() {
 		}
 
 	}
+	public void scenicselectedAdditionalService() {
+		System.out.println(
+				"scenic cruise has additional service of spa (only for adults)would you like to book it? yes or no,it will be charged $50 per person.");
+		customereply = sc.nextLine();
+		if (customereply.equals("yes")) {
+			totalAdditionalservicecharges = (50 * numberOfAdults);
 
+		} else {
+			totalAdditionalservicecharges = 0;
+		}
+	}
+
+	public void displayFinal() {
+		System.out.println(cruiseName + "Adults            @   " + numberOfAdults + "   $" + priceOfCruiseForAdults);
+		System.out.println(cruiseName + "Children abovefiveyears@   " + numberOfChildrenMoreThanFiveYears + "   $"
+				+ priceOfCruiseForChildrenmoreThanFive);
+		System.out.println(
+				"buffet specail price adults            @   " + numberOfAdults + "   $" + buffetPriceForAdults);
+		System.out.println("Buffet Special price children above 5    @    " + numberOfChildrenMoreThanFiveYears + "$"
+				+ buffetPriceForChildrenmoreThanFive);
+		System.out.println(
+				"Additional charges for Spa services    " + numberOfAdults + "   $   " + totalAdditionalservicecharges);
+		System.out.println("Total price:                 $" + totalPrice);
+		System.out.println("HST@15%:                 $" + hstCalucalted);
+		System.out.println("Final Price:                 $" + finalTotalbill);
+	}
+
+	public void totalPricewithbuffetprice() {
+		totalPrice = priceOfCruiseForAdults + priceOfCruiseForChildrenmoreThanFive + buffetPriceForAdults
+				+ buffetPriceForChildrenmoreThanFive + totalAdditionalservicecharges;
+		System.out.println("HI");
+
+	}
+
+	
 	public void buffetPricingForAdults() {
 		if (customerreplyforbuffet.equalsIgnoreCase("yes")) {
 
@@ -104,8 +139,13 @@ public String cruiseSelction() {
 		}
 
 	}
+	public void finalTotalBillCalucalated() {
+		finalTotalbill = totalPrice + hstCalucalted;
+		System.out.println("HELLO");
 
-	 public void buffetPricingForChildrenmoreThanFive() {
+	}
+
+	public void buffetPricingForChildrenmoreThanFive() {
 		if (customerreplyforbuffet.equalsIgnoreCase("yes")) {
 
 			buffetPriceForChildrenmoreThanFive = (numberOfChildrenMoreThanFiveYears * 4.99 * noOfDays);
@@ -121,6 +161,4 @@ public String cruiseSelction() {
 
 	}
 
-	 
-	
 }

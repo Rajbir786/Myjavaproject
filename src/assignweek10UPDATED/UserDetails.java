@@ -1,4 +1,4 @@
-package assignweek10;
+package assignweek10UPDATED;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -12,7 +12,7 @@ public class UserDetails {
 	int numberOfAdults = 0;
 	int totalNumOFChildren = 0;
 	int numberOfChildrenMoreThanFiveYears = 0;
-    boolean EmailValid = false;
+	private boolean EmailValid = false;
 	Scanner sc = new Scanner(System.in);
 
 	public void Signup() {
@@ -106,10 +106,7 @@ public class UserDetails {
 
 				if (ageOfChildren[j] > 5) {
 					numberOfChildrenMoreThanFiveYears = numberOfChildrenMoreThanFiveYears + 1;
-					if (ageOfChildren[j] > 12) {
-						numberOfAdults = numberOfAdults + 1;
 
-					}
 				}
 			}
 		}

@@ -2,28 +2,17 @@ package assignweek10;
 
 public class ScenicClass extends CruiseDetails {
 
-	ScenicClass(String nameCruise, int numOfDays, double adultPrice, double childMoreThan5years) {
-		// Constructor to initialize variables
-		cruiseName = nameCruise;
-		noOfDays = numOfDays;
-		priceForAdult = adultPrice;
-		priceForChildrenMoreThanFiveYears = childMoreThan5years;
-
-	}
+	
 
 	String customereply = "";
 	double totalAdditionalservicecharges = 0;
-
-	
-
-
 
 	public void scenicselectedAdditionalService() {
 		System.out.println(
 				"scenic cruise has additional service of spa (only for adults)would you like to book it? yes or no,it will be charged $50 per person.");
 		customereply = sc.nextLine();
 		if (customereply.equals("yes")) {
-			totalAdditionalservicecharges = (50*numberOfAdults);
+			totalAdditionalservicecharges = (50 * numberOfAdults);
 
 		} else {
 			totalAdditionalservicecharges = 0;
@@ -45,17 +34,12 @@ public class ScenicClass extends CruiseDetails {
 		System.out.println("Final Price:                 $" + finalTotalbill);
 	}
 
-	public void totalPricewithbuffetprice() {
-		totalPrice = priceOfCruiseForAdults + priceOfCruiseForChildrenmoreThanFive + buffetPriceForAdults
-				+ buffetPriceForChildrenmoreThanFive + totalAdditionalservicecharges;
-
-	}
+	
 
 	public void finalTotalBillCalucalated() {
 		finalTotalbill = totalPrice + hstCalucalted;
+		System.out.println("HELLO");
 
 	}
-
-	
 
 }

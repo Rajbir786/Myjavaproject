@@ -11,27 +11,19 @@ public class DeluxeSuite extends HotelBooking {
 		priceatHotelStay = (180 * noOfdaysStayHotel);
 
 	}
-
 	public void displayFinal() {
-		System.out.println("Delux Suite" + "  " + noOfdaysStayHotel + " @ nights" + priceatHotelStay);
-		System.out.println("Lunch Pre-Booked Special Rate Adults" + "@  number of adults  " + numberOfAdults + "   $  "
-				+ priceHotelLunchforadults);
+		System.out.println(roomSelcted + "  " + noOfdaysStayHotel + " @ nights" + priceatHotelStay);
+		System.out.println("Lunch Pre-Booked Special Rate Adults" + "@   total number of adults   " + numberOfAdults
+				+ "     $ " + priceHotelLunchforadults);
 
-		System.out.println("Lunch Pre-Booked Special Rate Children " + "  @  number of adults  " + totalNumOFChildren
-				+ " $  " + priceHotelLunchforchildren);
+		System.out.println("Lunch Pre-Booked Special Rate Children " + "@    totalNumOFChildren    "
+				+ totalNumOFChildren + " $   " + priceHotelLunchforchildren);
 
 		System.out.println("Total price:                 $" + totalPrice);
 		System.out.println("HST@18%:                 $" + taxCalucaltion);
 		System.out.println("Final Price:                 $" + finalTotalbill);
-	}
 
-	public void totalPricewithlunchprice() {
-		totalPrice = (priceatHotelStay + priceHotelLunchforadults + priceHotelLunchforchildren);
 
-	}
+}
 
-	public void calFinalPrice() {
-		finalTotalbill = totalPrice + taxCalucaltion;
-
-	}
 }

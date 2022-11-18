@@ -13,7 +13,7 @@ public class FamilySuite extends HotelBooking {
 	}
 
 	public void displayFinal() {
-		System.out.println("Family Suite" + "  " + noOfdaysStayHotel + " @ nights" + priceatHotelStay);
+		System.out.println(roomSelcted + "  " + noOfdaysStayHotel + " @ nights" + priceatHotelStay);
 		System.out.println("Lunch Pre-Booked Special Rate Adults" + "@   total number of adults   " + numberOfAdults
 				+ "     $ " + priceHotelLunchforadults);
 
@@ -23,16 +23,6 @@ public class FamilySuite extends HotelBooking {
 		System.out.println("Total price:                 $" + totalPrice);
 		System.out.println("HST@18%:                 $" + taxCalucaltion);
 		System.out.println("Final Price:                 $" + finalTotalbill);
-	}
-
-	public void totalPricewithlunchprice() {
-		totalPrice = (priceatHotelStay + priceHotelLunchforadults + priceHotelLunchforchildren);
-
-	}
-
-	public void calFinalPrice() {
-		finalTotalbill = totalPrice + taxCalucaltion;
-
 	}
 
 }

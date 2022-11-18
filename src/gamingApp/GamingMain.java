@@ -1,6 +1,14 @@
 package gamingApp;
 
 import java.io.BufferedReader; //reads text from a character-input stream, 
+
+
+
+
+
+
+
+
 //buffering characters so as to provide for the efficient reading of characters, arrays, and lines
 import java.io.File;//The File class is Java’s representation of a file or directory pathname.
 import java.io.FileReader;//The Java FileReader class, java.io.FileReader makes it possible to read the contents of a file as a stream of characters. 
@@ -8,6 +16,10 @@ import java.util.ArrayList;//
 
 import java.util.Random;//
 import java.util.Scanner;
+
+import assignmentWeek11.Item;
+import assignmentWeek11.R1;
+import assignmentWeek11.Rocket;
 
 public class GamingMain {
 	Scanner sc = new Scanner(System.in);
@@ -25,7 +37,7 @@ public class GamingMain {
 		ArrayList<String> allNames = new ArrayList<String>();//
 		Random random = new Random();//
 
-		BufferedReader readFile = new BufferedReader(new FileReader(file));//
+		BufferedReader readFile = new BufferedReader(new FileReader(file));
 		while (readFile.ready()) // It checks if the file reader is ready to be read.
 		{
 			allNames.add(readFile.readLine());//

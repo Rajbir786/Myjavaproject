@@ -1,3 +1,4 @@
+
 package assignweek10;
 
 import java.util.Scanner;
@@ -86,6 +87,16 @@ public class HotelBooking extends UserDetails {
 			}
 
 		}
+	}
+
+	public void totalPricewithlunchprice() {
+		totalPrice = (priceatHotelStay + priceHotelLunchforadults + priceHotelLunchforchildren);
+
+	}
+
+	public void calFinalPrice() {
+		finalTotalbill = totalPrice + taxCalucaltion;
+
 	}
 
 }

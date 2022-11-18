@@ -1,8 +1,7 @@
-package assignweek10;
+package assignweek10UPDATED;
 
 public class DiscoveryClass extends CruiseDetails {
-	String customereply = "";
-	double totalAdditionalservicecharges = 0;
+	private double totalAdditionalservicecharges = 0;
 
 	DiscoveryClass(String nameCruise, int numOfDays, double adultPrice, double childMoreThan5years) {
 		cruiseName = nameCruise;
@@ -12,17 +11,16 @@ public class DiscoveryClass extends CruiseDetails {
 
 	}
 
-	protected double discoveryselectedAdditionalService() {
+	public double discoveryselectedAdditionalService() {
 		System.out.println(
 				"Discovery cruise has additional service of Adventure Games  only for adults, would you like to book it? yes or no,it will be charged $20per person.");
-		customereply = sc.nextLine();
+		String customereply = sc.nextLine();
 		if (customereply.equals("yes")) {
-			totalAdditionalservicecharges = (50 * numberOfAdults);
+			totalAdditionalservicecharges = (20 * numberOfAdults);
 
 		} else {
 			totalAdditionalservicecharges = 0;
 		}
 		return totalAdditionalservicecharges;
-
 	}
 }
