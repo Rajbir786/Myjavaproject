@@ -4,12 +4,13 @@ public class Rocket implements SpaceShip {
 
 	public int cost;
 	private int weightRocket;
-    public int maxCargo;
-	int currentweight = 0;
-    public Rocket(int cost, int maxCargo) {
-	this.cost=cost;
-	this.maxCargo=maxCargo;
-}
+	public int maxCargo;
+	public int currentweight = 0;
+
+	public Rocket(int cost, int maxCargo) {
+		this.cost = cost;
+		this.maxCargo = maxCargo;
+	}
 
 	@Override
 	public boolean launch() {
@@ -27,7 +28,6 @@ public class Rocket implements SpaceShip {
 		return this.currentweight + item.weight <= maxCargo;
 
 	}
-
 
 	public int carry(Item item) {
 		this.currentweight = this.currentweight + item.weight;

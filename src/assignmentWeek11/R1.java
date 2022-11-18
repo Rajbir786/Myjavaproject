@@ -5,14 +5,12 @@ public class R1 extends Rocket {
 		super(100,8000);
 	}
 		
-	
-
 	public boolean launch() {
 
-		double random = (Math.random()/17);
+		double random = (Math.random());
 
 		double chanceOfExplosion = (0.05 * (currentweight /this.maxCargo ));
-		if (chanceOfExplosion<= random) {
+		if (chanceOfExplosion<random) {
 			return true;
 		} else {
 			return false;
@@ -21,9 +19,9 @@ public class R1 extends Rocket {
 
 	public boolean land() {
 
-		double random= (Math.random()/11);
+		double random= (Math.random());
 		double chanceLandingCrash = (0.01 * (currentweight /this.maxCargo ));
-		if (chanceLandingCrash <=random) {
+		if (chanceLandingCrash <random) {
 			return true;
 
 		} else {

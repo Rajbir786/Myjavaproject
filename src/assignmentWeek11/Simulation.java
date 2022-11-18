@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 class Simulation {
-	public ArrayList loadItems() throws NumberFormatException, IOException {
+	public  ArrayList<Item> loadItems() throws NumberFormatException, IOException {
 		File file = new File("C:\\Users\\Rajbir\\Downloads\\phase-1.txt");
 		ArrayList<Item> allData = new ArrayList<>();//
 		String inputLine;
@@ -19,9 +19,9 @@ class Simulation {
 			int indexOfequal = inputLine.indexOf("=");// "index of = sign in string we find
 			String nameItem = inputLine.substring(0, indexOfequal);// then part those string
 			String weightItem = inputLine.substring(indexOfequal + 1);// then divide those string
-			Item item =new Item(nameItem, Integer.valueOf(weightItem));
+			Item item = new Item(nameItem, Integer.valueOf(weightItem));
 			allData.add(item);// here create object of Item class and pass the
-																	// arguments it.
+								// arguments it.
 
 		}
 		readFile.close();//
@@ -44,8 +44,8 @@ class Simulation {
 				rocket.carry(item);
 
 			} else {
-				R1Rockets.add(rocket);
 				rocket = new R1();
+				R1Rockets.add(rocket);
 				rocket.carry(item);
 
 			}
@@ -63,14 +63,14 @@ class Simulation {
 				rocket.carry(item);
 
 			} else {
-				RocketsR2.add(rocket);
 				rocket = new R2();
+				RocketsR2.add(rocket);
 				rocket.carry(item);
 
 			}
 		}
 
-		System.out.println("total budget of rockets in R2Fleet   " + RocketsR2.size());
+		System.out.println("total number of rockets in R2Fleet   " + RocketsR2.size());
 		return RocketsR2;
 	}
 
@@ -79,33 +79,37 @@ class Simulation {
 		Rocket rocket = new R1();
 		for (int i = 0; i < rocketsR1.size(); i++) {
 
-			if (rocket.launch() && rocket.land()) {
+			if ((rocketsR1.get(i).launch()) && (rocketsR1.get(i).land())) {
 				counter++;
 			} else {
-				rocket.launch();
+				rocketsR1.get(i).launch();
+
 			}
 		}
 
 		System.out.println(counter + "  time rockets R1 succefully launch and land");
-		;
 
-		int totalCostR1Fleet = (100 * counter);
-		System.out.println("Total cost of R1 fleet:$" + totalCostR1Fleet + "million");
+		int totalCostR1Fleet = (rocket.cost * counter);
+		System.out.println("Total budget of R1 fleet:$" + totalCostR1Fleet + "million");
 	}
 
 	public void runSimulationR2(ArrayList<Rocket> r2Rockets) {
 		int counter2 = 0;
 		Rocket rocket = new R2();
+
 		for (int i = 0; i < r2Rockets.size(); i++) {
-			if (rocket.launch() && rocket.land()) {
+			if ((r2Rockets.get(i).launch()) && (r2Rockets.get(i).land())) {
 				counter2++;
 			} else {
-				rocket.launch();
+				r2Rockets.get(i).launch();
+
 			}
 
+		
 		}
+
 		System.out.println(counter2 + "  time rockets  R2 rockets successfully launch and land ");
-		int totalCostR1Fleet = (120 * counter2);
+		int totalCostR1Fleet = (rocket.cost * counter2);
 		System.out.println("Total budget of R1 fleet:$" + totalCostR1Fleet + "million");
 	}
 }
